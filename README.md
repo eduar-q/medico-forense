@@ -58,10 +58,12 @@ python3 -m unittest discover tests
 El Médico Forense es una herramienta de triage inicial.
 Sus resultados deben interpretarse como señales que pueden requerir una investigación posterior, no como evidencia definitiva de un incidente de seguridad.
 El proyecto comienza con cuatro chequeos:
+
 DISK
 RAM
 NETWORK
 SSH
+
 La idea es mantener cada componente sencillo, comprensible y fácil de ampliar.
 
 
