@@ -1,0 +1,17 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches de pruebas
+.pytest_cache/
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Configuración de editores y sistema
+.DS_Store
+.vscode/
+.idea/

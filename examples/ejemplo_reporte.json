@@ -1,0 +1,26 @@
+{
+    "prioridad": "HIGH",
+    "evaluaciones": [
+        {
+            "modulo": "DISK",
+            "simbolo": "\u2713",
+            "detalle": "Normal"
+        },
+        {
+            "modulo": "RAM",
+            "simbolo": "\u2713",
+            "detalle": "Normal"
+        },
+        {
+            "modulo": "NETWORK",
+            "simbolo": "\u26a0",
+            "detalle": "Puertos abiertos: [53, 53]"
+        }
+    ],
+    "razones": [
+        "Puertos abiertos: [53, 53]"
+    ],
+    "recomendaciones": [
+        "Inspeccionar procesos en puertos abiertos"
+    ]
+}
