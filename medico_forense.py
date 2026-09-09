@@ -101,4 +101,5 @@ def generar_reporte():
     guardar_json(chequeos, prioridad, razones, recomendaciones)
 
 if __name__ == "__main__":
+    print("[*] Ejecutando El Médico Forense...")  
     generar_reporte()
