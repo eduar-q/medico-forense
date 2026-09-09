@@ -57,6 +57,7 @@ python3 -m unittest discover tests
 ## ⚠️ Alcance
 El Médico Forense es una herramienta de triage inicial.
 Sus resultados deben interpretarse como señales que pueden requerir una investigación posterior, no como evidencia definitiva de un incidente de seguridad.
+
 El proyecto comienza con cuatro chequeos:
 
 DISK
