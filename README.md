@@ -21,23 +21,26 @@ Diseñada para realizar un análisis inicial del estado del sistema sin dependen
 ## 🖥️ Ejemplo de Salida
 
 ```text
+*] Ejecutando El Médico Forense...
+
 SYSTEM TRIAGE
 ────────────────────
 DISK        ✓ Normal
 RAM         ✓ Normal
-NETWORK     ⚠ Puertos abiertos: [53, 53]
+NETWORK     ⚠ Puertos en escucha (LISTEN): [53]
 SSH         ✓ PermitRootLogin deshabilitado
 
 INITIAL ASSESSMENT
 Priority: HIGH
 
 Reasons:
-• Puertos abiertos: [53, 53]
+• Puertos en escucha (LISTEN): [53]
 
 Recommended investigation:
 1. Inspeccionar procesos en puertos abiertos
 
 No changes made to system.
+
 ```
 
 ## 🚀 Uso
