@@ -31,8 +31,11 @@ def chequear_puertos():
             if partes[3] == '0A':  # Estado LISTEN
                 puertos.append(int(partes[1].split(':')[1], 16))
                 
-    alerta = len(puertos) > 0
-    detalle = f"Puertos abiertos: {puertos}" if puertos else "Sin puertos TCP activos"
+    # Filtramos los duplicados y ordenamos los puertos
+    puertos_unicos = sorted(list(set(puertos)))
+    
+    alerta = len(puertos_unicos) > 0
+    detalle = f"Puertos abiertos: {puertos_unicos}" if puertos_unicos else "Sin puertos TCP activos"
     return "NETWORK", "⚠" if alerta else "✓", detalle, alerta, "Inspeccionar procesos en puertos abiertos"
 
 def chequear_ssh(config_path="/etc/ssh/sshd_config"):
@@ -101,5 +104,5 @@ def generar_reporte():
     guardar_json(chequeos, prioridad, razones, recomendaciones)
 
 if __name__ == "__main__":
-    print("[*] Ejecutando El Médico Forense...")  
+    print("[*] Ejecutando El Médico Forense...")
     generar_reporte()
