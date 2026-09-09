@@ -1,37 +1,60 @@
-# 🩻 El Médico Forense — Linux Triage Tool
+# El Médico Forense 🩺
 
-Herramienta de triage ligero y diagnóstico rápido para sistemas Linux. Diseñada para respuesta a incidentes y auditorías iniciales sin alterar el estado del sistema.
+Una herramienta de diagnóstico rápido (triage) en Python para servidores Linux. 
+Diseñada para realizar un análisis inicial del estado del sistema sin dependencias externas y sin modificar ningún archivo.
 
-## ✨ Características
-* ⚡ **Cero Dependencias Externas**: Desarrollado exclusivamente con la librería estándar de Python (`shutil`, `json`, `os`).
-* 🐧 **Lectura Directa del Kernel**: Consulta `/proc/meminfo` y `/proc/net/tcp` para obtener datos en tiempo real sin ejecutar subprocesos innecesarios.
-* 🛡️ **Seguro e Inofensivo**: Modo de solo lectura; no realiza modificaciones en el sistema auditado.
-* 📊 **Doble Formato de Salida**: Genera un reporte legible en terminal y exporta los datos en `examples/ejemplo_reporte.json`.
+## 🚀 Características
+- **Cero dependencias externas**: Utiliza únicamente la librería estándar de Python (`shutil`, `json`, etc.).
+- **Inspección directa del Kernel**: Lee la información del sistema directamente desde la interfaz `/proc`.
+- **Sin modificaciones**: Herramienta de solo lectura que genera un reporte sin alterar el sistema hospedador.
+- **Salida estandarizada**: Formato visual legible en consola y exportación estructurada en JSON.
 
-## 📁 Estructura del Proyecto
+## 📊 Módulos de Triage
+
+| Módulo | Fuente de datos | Qué evalúa |
+| :--- | :--- | :--- |
+| **DISK** | `shutil.disk_usage` | Uso de espacio en el directorio raíz (`/`) |
+| **RAM** | `/proc/meminfo` | Porcentaje de presión y disponibilidad de memoria |
+| **NETWORK** | `/proc/net/tcp` | Detección de puertos TCP en estado de escucha (`LISTEN`) |
+| **SSH** | `/etc/ssh/sshd_config` | Verificación de políticas de seguridad (ej. `PermitRootLogin`) |
+
+## 🖥️ Ejemplo de Salida
 
 ```text
-medico-forense/
-├── medico_forense.py       # Script principal de diagnóstico
-├── README.md               # Documentación del proyecto
-├── .gitignore              # Archivos ignorados por Git
-├── examples/
-│   └── ejemplo_reporte.json # Ejemplo de salida estructurada
-└── tests/
-    └── test_medico_forense.py # Pruebas unitarias automatizadas
+SYSTEM TRIAGE
+────────────────────
+DISK        ✓ Normal
+RAM         ✓ Normal
+NETWORK     ⚠ Puertos abiertos: [53, 53]
+SSH         ✓ PermitRootLogin deshabilitado
+
+INITIAL ASSESSMENT
+Priority: HIGH
+
+Reasons:
+• Puertos abiertos: [53, 53]
+
+Recommended investigation:
+1. Inspeccionar procesos en puertos abiertos
+
+No changes made to system.
+
 ```
 
-🚀 Uso
-Ejecuta el script de diagnóstico en cualquier entorno Linux con Python 3:
+## 🛠️ Uso
+Simplemente ejecuta el script principal con Python 3:
+
 ```
 python3 medico_forense.py
 
 ```
+_El reporte detallado se guardará automáticamente en examples/ejemplo_reporte.json.
 
-🧪 Pruebas Automatizadas
-Para validar los módulos de diagnóstico mediante la suite de pruebas unitarias:
-```
-python3 -m unittest discover -s tests
-```
+## 🧪 Pruebas Unitarias
+Para ejecutar la suite de pruebas unitarias:
 
+```
+python3 -m unittest discover tests
+
+```
 

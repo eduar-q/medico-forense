@@ -1,10 +1,10 @@
 import unittest
-from medico_forense import chequear_disco, chequear_ram, chequear_puertos
+# 1. Importamos la nueva función
+from medico_forense import chequear_disco, chequear_ram, chequear_puertos, chequear_ssh
 
 class TestMedicoForense(unittest.TestCase):
 
     def test_estructura_chequear_disco(self):
-        # Verifica que la función devuelva exactamente 5 valores
         resultado = chequear_disco()
         self.assertEqual(len(resultado), 5)
 
@@ -14,6 +14,11 @@ class TestMedicoForense(unittest.TestCase):
 
     def test_estructura_chequear_puertos(self):
         resultado = chequear_puertos()
+        self.assertEqual(len(resultado), 5)
+
+    # 2. Agregamos la prueba para SSH
+    def test_estructura_chequear_ssh(self):
+        resultado = chequear_ssh()
         self.assertEqual(len(resultado), 5)
 
 if __name__ == '__main__':

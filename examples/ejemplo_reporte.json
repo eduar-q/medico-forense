@@ -15,6 +15,11 @@
             "modulo": "NETWORK",
             "simbolo": "\u26a0",
             "detalle": "Puertos abiertos: [53, 53]"
+        },
+        {
+            "modulo": "SSH",
+            "simbolo": "\u2713",
+            "detalle": "PermitRootLogin deshabilitado"
         }
     ],
     "razones": [
