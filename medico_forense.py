@@ -35,7 +35,7 @@ def chequear_puertos():
     puertos_unicos = sorted(list(set(puertos)))
     
     alerta = len(puertos_unicos) > 0
-    detalle = f"Puertos abiertos: {puertos_unicos}" if puertos_unicos else "Sin puertos TCP activos"
+    detalle = f"Puertos en escucha (LISTEN): {puertos_unicos}" if puertos_unicos else "Sin sockets TCP en escucha"
     return "NETWORK", "⚠" if alerta else "✓", detalle, alerta, "Inspeccionar procesos en puertos abiertos"
 
 def chequear_ssh(config_path="/etc/ssh/sshd_config"):
