@@ -28,7 +28,7 @@ python3 medico_forense.py
 
 ```
 
-🧪 Pruebas Automatizadas
+## 🧪 Pruebas Automatizadas
 Para validar los módulos de diagnóstico mediante la suite de pruebas unitarias:
 ```
 python3 -m unittest discover -s tests
