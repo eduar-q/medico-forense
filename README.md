@@ -41,9 +41,14 @@ No changes made to system.
 
 ```
 
+
 ## 🛠️ Uso
 Simplemente ejecuta el script principal con Python 3:
 
+
+## 🚀 Uso
+Ejecuta el script de diagnóstico en cualquier entorno Linux con Python 3:
+>>>>>>> d281baba06474519ea6a5a00727831b650116caf
 ```
 python3 medico_forense.py
 
@@ -53,6 +58,11 @@ _El reporte detallado se guardará automáticamente en examples/ejemplo_reporte.
 ## 🧪 Pruebas Unitarias
 Para ejecutar la suite de pruebas unitarias:
 
+
+
+## 🧪 Pruebas Automatizadas
+Para validar los módulos de diagnóstico mediante la suite de pruebas unitarias:
+>>>>>>> d281baba06474519ea6a5a00727831b650116caf
 ```
 python3 -m unittest discover tests
 
