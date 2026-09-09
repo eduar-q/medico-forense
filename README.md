@@ -21,7 +21,7 @@ medico-forense/
     └── test_medico_forense.py # Pruebas unitarias automatizadas
 ```
 
-🚀 Uso
+## 🚀 Uso
 Ejecuta el script de diagnóstico en cualquier entorno Linux con Python 3:
 ```
 python3 medico_forense.py
