@@ -21,7 +21,7 @@ Diseñada para realizar un análisis inicial del estado del sistema sin dependen
 ## 🖥️ Ejemplo de Salida
 
 ```text
-*] Ejecutando El Médico Forense...
+ Ejecutando El Médico Forense...
 
 SYSTEM TRIAGE
 ────────────────────
